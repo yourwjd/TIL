@@ -39,6 +39,7 @@ let admin;
 let name = "John";
 
 admin = name;
+//name = admin 으로 작성하면 오류. 아마 순서가 admin이 먼저이기 때문일 것
 
-alert(admin);
+console.log(admin);
 
