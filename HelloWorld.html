@@ -9,8 +9,6 @@
     <h3>2-1</h3>
     <h4>alert 창 만들어보기</h4>
 
-    <!-- <script src="./HelloWorld.js"></script> -->
-
     <br><br>
 
     <h3>2-2</h3>
@@ -43,25 +41,59 @@
     <p>변수: 데이터를 저장하는 '이름이 붙은 저장소'</p>
     <p><b>let</b>을 사용</p>
 
-    <script>
+    <!-- <script>
         let message; //변수 선언
         message = 'Hello'; //데이터 저장(값 할당)
         message = 'World!'; //값 변경
 
         alert('message'); //저장된 값 보여줌
-    </script>
+    </script> -->
 
     <p>let message; 변수 선언<br>
     message = 'Hello'; 데이터 저장(값 할당)<br>
     alert('message'); 저장된 데이터 보여줌</p>
+
     <p>한 줄에 변수 선언, 값 할당을 동시에 작성 가능함<br>
         let message = 'Hello';</p>
+
     <p>한 줄에 여러 변수를 선언 가능함 (권장x)<br>
     let user = 'John', age= 25, message = 'Hello';</p>
     <p>하지만 가독성을 위해 1줄 1변수 권장</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+
+    <p>값을 다름 변수의 값으로 복사할 수 있음<br>
+        let Hello = "Hello World!";<br>
+        let World; 복사할 변수<br>
+        World = Hello; 값 복사</p>
+
+    <p>변수는 한 번만 선언 가능함<br>
+    값을 변경하는 재할당은 할 수 있지만 
+    let Hello;라고 이미 선언한 경우에는 Hello라는 변수는 재선언할 수 없음</p>
+    
+    <p>변수명 규칙</p>
+    <ol>
+        <li>문자, 숫자, 기호 $ _ 만 사용 가능</li>
+        <li>첫 글자에는 숫자가 올 수 없음</li>
+        <li>예약어는 사용할 수 없음 <br>
+        <a href="https://developer.mozilla.org/en-US/docs/
+        Web/JavaScript/Reference/Lexical_grammar#keywords"></a></li>
+        <li>주로 카멜 표기법을 사용함<br>
+        ex) MyVeryLongName</li>
+        <li>대소문자를 구별함</li>
+        <li>영어 사용 권장</li>
+    </ol>
+    
+    <h4>상수</h4>
+    <p>상수: 변하지 않는 변수</p>
+    <p><b>const</b>를 사용</p>
+    <p>상수는 변하지 않기 때문에 값을 바꿀 수 없음 = 재할당 불가</p>
+    <p>const myBirthday = '02.10.13'<br>
+    이 상수 myBirthday 의 값은 02.10.13으로 고정</p>
+    <p>변하지 않을 값이라면 변수let 대신 상수 const를 쓰기</p>
+    <p>기억하기 힘든 값을 대문자 상수에 할당해 별칭으로 사용할 수 있음<br>
+    const COLOR_RED = "F00"; 기억하기 힘든 컬러코드를 대문자 상수에 저장<br>
+    let color = COLOR_RED; 상수를 별칭으로 사용<br>
+    alert(color); 컬러코드를 쉽게 찾을 수 있음</p>
+
+    <script src="./HelloWorld.js"></script>
 </body>
 </html>
