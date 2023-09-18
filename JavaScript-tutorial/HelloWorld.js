@@ -43,3 +43,36 @@ admin = name;
 
 console.log(admin);
 
+//자료형
+//숫자형
+let n = 123;
+n = 12.345;
+
+//Infinity 출력
+console.log(1 / 0);
+console.log(Infinity);
+//NaN 출력
+console.log("문자열" / 2)
+console.log("문자열" / 2 + 5);
+
+//Bigint
+// let bigInt = 1234567890123456789012345678901234567890; //오류 발생
+const bigInt = 1234567890123456789012345678901234567890n;
+
+//문자형
+let str = "Hello";
+let str2 = 'Hello!'
+let phrase = `Hello~ ${str}`;
+
+let name2 = "John";
+console.log(`Hello, ${name2}!`);
+
+console.log(`the result is ${1 + 2}`);
+
+//불린형
+let nameFielsChecked = true;
+let ageFieldChecked = false;
+
+let isGreater = 4 > 1;
+
+console.log( isGreater );
