@@ -76,3 +76,26 @@ let ageFieldChecked = false;
 let isGreater = 4 > 1;
 
 console.log( isGreater );
+
+//null
+let day = null; //날짜를 알 수 없거나 그 값이 비어있을 때
+
+//undefiined
+let age;
+console.log(age);
+
+//undefined 할당
+let Age = 100;
+Age = undefined;
+console.log(Age);
+
+//typeof
+typeof 0
+typeof null
+
+//2-5과제
+let name3 = "Ilya";
+
+console.log(`hello ${1}`); //hello 1
+console.log(`hello ${"name3"}`); //hello name3
+console.log(`hello ${name3}`); //hello Ilya
