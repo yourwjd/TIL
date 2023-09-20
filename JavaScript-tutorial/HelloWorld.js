@@ -99,3 +99,14 @@ let name3 = "Ilya";
 console.log(`hello ${1}`); //hello 1
 console.log(`hello ${"name3"}`); //hello name3
 console.log(`hello ${name3}`); //hello Ilya
+
+//2-6
+// alert("Hello");
+
+// let dog = prompt('당신이 좋아하는 동물은 무엇인가요', '강아지');
+
+// let check = confirm("모두 확인했나요?");
+
+//2-6과제
+// let name4 = prompt("당신의 이름은 무엇인가요", 'yourwjd');
+// alert(name4);
