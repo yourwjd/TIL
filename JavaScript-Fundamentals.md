@@ -49,7 +49,7 @@ Hello World!
 ```"use strict"```   
 ```'use strict'```
 
-브라우저 콘솔에서 사용 시 콘솔창에   
+#### 브라우저 콘솔에서 사용 시 콘솔창에   
 ```'use strict'; + 줄바꿈(shift+enter) ```   
 <br>
 사용 시 모든 스크립트가 엄격모드로 실행   
@@ -63,38 +63,54 @@ Hello World!
 
 <br>
 
+변수와 상수
+===
 
-    <h4>변수</h4>
-    <p>변수: 데이터를 저장하는 '이름이 붙은 저장소'</p>
-    <p><b>let</b>을 사용</p>
+변수
+---
+> 데이터를 저장하는 '이름이 붙은 저장소'
 
-    <!-- <script>
-        let message; //변수 선언
-        message = 'Hello'; //데이터 저장(값 할당)
-        message = 'World!'; //값 변경
+    let 변수이름;
 
-        alert('message'); //저장된 값 보여줌
-    </script> -->
+#### 변수 이름이 message일 때   
+```let message;``` //변수 선언   
+```message = 'Hello';``` //데이터 저장(값 할당)   
 
-    <p>let message; 변수 선언<br>
-    message = 'Hello'; 데이터 저장(값 할당)<br>
-    alert('message'); 저장된 데이터 보여줌</p>
+<br>
 
-    <p>한 줄에 변수 선언, 값 할당을 동시에 작성 가능함<br>
-        let message = 'Hello';</p>
+#### 한 줄에 변수 선언, 값 할당을 동시에 작성 가능함   
+```let message = 'Hello';```
 
-    <p>한 줄에 여러 변수를 선언 가능함 (권장x)<br>
-    let user = 'John', age= 25, message = 'Hello';</p>
-    <p>하지만 가독성을 위해 1줄 1변수 권장</p>
+<br>
 
-    <p>값을 다름 변수의 값으로 복사할 수 있음<br>
-        let Hello = "Hello World!";<br>
-        let World; 복사할 변수<br>
-        World = Hello; 값 복사</p>
+#### 한 줄에 여러 변수를 선언 가능함 (권장x)   
+```let user = 'John', age= 25, message = 'Hello';```
 
-    <p>변수는 한 번만 선언 가능함<br>
-    값을 변경하는 재할당은 할 수 있지만 
-    let Hello;라고 이미 선언한 경우에는 Hello라는 변수는 재선언할 수 없음</p>
+<br>
+
+#### 값을 변경할 수 있음   
+```let message;```   
+```message = 'Hello!';```   
+```message = 'World!'``` //값 변경
+
+<br>
+
+#### 값을 다름 변수의 값으로 복사할 수 있음   
+```let Hello = "Hello World!";```   
+```let World;``` //복사할 변수   
+```World = Hello;``` //Hello의 값을 World에 복사
+
+<br>
+
+#### 변수는 한 번만 선언 가능   
+값을 변경하는 **재할당**은 할 수 있지만   
+let Hello;라고 이미 선언한 경우에는 Hello라는 변수는 **재선언**할 수 없음
+
+
+
+
+
+
     
     <p>변수명 규칙</p>
     <ol>
