@@ -218,58 +218,104 @@ ex) MyVeryLongName
     ```alert(`Hello, ${name}!`)``` //Hello, John! 출력   
     ```alert(`the result is ${1 + 2}`);``` //the result is 3 출력
 
-    <br><br>
+<br>
+<br>
 
+3.불린형 logical type
+---
+> true 긍정, false 부정 값
 
-    <li>불린형 logical type</li>
-    <p>true 긍정, false 부정 값</p>
-    <p>let nameFielsChecked = true;<br>
-        let ageFieldChecked = false;</p>
-    <p>let isGreater = 4 > 1;<br>
-        alert( isGreater ); true 출력</p>
+```let nameFielsChecked = true;```   
+```let ageFieldChecked = false;```
 
-    <br><br>
+<br>
 
-    <li>'null' 값</li>
-    <p>nothing 존재하지 않는 값, empty 비어 있는 값, unknown 알 수 없는 값</p>
-    <p>오로지 null 값만 포함하는 별도의 자료형<br>
-        다른 언어의 null과 성격이 다름
-    </p>
-    <p>let age = null;</p>
+#### 비교 결과 저장
+```let isGreater = 4 > 1;```   
+```alert( isGreater );``` //true 출력
 
-    <br><br>
+<br>
+<br>
 
-    <li>'undefined' 값</li>
-    <p>값이 할당되지 않은 상태</p>
-    <p>let age;<br>
-    alert(age); undefined 출력</p>
+4.null 값
+---
+> 어느 자료형에도 속하지 않는 값, 오로지 null값만 포함하는 별도의 자료형   
+다른 언어들ㄹ의 null과 성격이 다름
 
-    <p>직접 할당도 가능, 하지만 null 사용을 권장</p>
-    <p>let age = 100;<br>
-        age = undefined;<br>
-        alert(age); undefined 출력</p>
+```let age = null;```
 
-    <br><br>
+* nothing 존재하지 않는 값
+* empty 비어 있는 값
+* unknown 알 수 없는 값
 
-    <li>객체와 심볼</li>
-    <p>객체형 (object)</p>
-    <p>데이터 컬렉션, 복잡한 개체 표현 가능</p>
+<br>
+<br>
 
-    <br>
+5.undefined 값
+---
+> 값이 할당되지 않은 상태를 나타내는 자신만의 자료형
 
-    <p>심볼형 (symbol)</p>
-    <p>객체의 고유한 식별자 만들 때 사용</p>
+<br>
 
-    <br><br>
+#### 변수는 선언했지만 값을 할당하지 않은 경우
+```let age;```   
+```alert(age);``` //undefined 출력
 
-    <li>typeof 연산자</li>
-    <p>인수의 자료형을 문자열 형태로 반환</p>
-    <p>typeof x 혹은 typeof (x) 형태로 사용</p>
-    <p>typeof 0; "number" 출력 <br>
-    typeof true; "boolean" 출력</p>
-    <p>typeof null; 객체형(objrct)이 아니지만 하위호환성을 위해 오류를 출력<br>
-        typeof alert; 함수형(function)은 존재하지 않지만 하위호환성을 위해 출력</p>
-</ol>
+<br>
+
+#### 직접 undefined를 할당한 경우
+```let age = 100;```   
+```age = undefined;```
+
+```alert(age);``` //undefined 출력
+
+가능은 하지만 변수의 초기값을 남겨두기 위해 null을 사용하는 것을 권장
+
+<br>
+<br>
+
+6.객체와 심볼
+---
+> 객체형 (object): 데이터 컬렉션, 복잡한 개체 entity 표현 가능 
+
+  
+> 심볼형 (symbol): 객체의 고유한 식별자 unique identifier 만들 때 사용
+
+<br>
+<br>
+
+7.typeof 연산자
+---
+> 인수의 자료형 반환   
+ 자료형에 따라 다르게 처리하거나 자료형을 알아내고자 할 때 유용
+
+<br>
+
+#### 두 가지 형태의 문법 지원 (결과는 동일)
+* 연산자 typeof x
+* 함수 typeof(x)
+
+    >인수의 자료형을 나타내는 문자열 반환
+
+    ```typeof 0;``` //"number" 출력   
+    ```typeof true;``` //"boolean" 출력
+
+    ```typeof null;``` //"object" 출력   
+    null은 object가 아니지만 하위 호환성을 위해
+
+    ```typeof alert;``` //"function" 출력
+    피연산자가 함수인 경우 function 반환   
+    함수형(function)은 object 객체형에 속하는 것이지만 하위호환성을 위해
+    
+<br>
+<br>
+
+alert, prompt, confirm을 이용한 상호작용
+===
+alert
+---
+> 사용자가 확인 버튼을 누를 때까지 메시지를 보여주는 창
+
 
 <h3>2-6</h3>
 <h4>alert</h4>
