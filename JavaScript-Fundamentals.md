@@ -316,28 +316,150 @@ alert
 ---
 > 사용자가 확인 버튼을 누를 때까지 메시지를 보여주는 창
 
+```alert("Hello");```
 
-<h3>2-6</h3>
-<h4>alert</h4>
-<p>사용자가 확인 버튼을 누를 때까지 메시지를 보여주는 창</p>
-<p>alert("Hello");</p> 
-<p>메시지를 보여주는 창 = 모달 창(modal window) <br>
-    '모달'이란 해당 페이지 외의 부분과 상호작용이 불가능하다는 의미</p>
+* 모달: 해당 페이지 외의 부분과 상호작용이 불가능
 
-<h4>prompt</h4>
-<p>텍스트 메시지, 입력 필트, 확인/취소 버튼이 있는 모달 창</p>
-<ol>
-    <li>title</li>
-    <p>사용자에게 보여줄 문자열</p>
-    <li>default</li>
-    <p>입력 필드의 초기값(선택값)<br>
-    []대괄호는 필수가 아닌 선택이라는 의미<br>
-    취소, 자판 esc를 선택한 경우에는 null을 반환</p>
-</ol>    
-<p>result = prompt(title, [default]);</p>
-<p>[default]는 선택값이지만 없는 경우에도 ''로 기본값을 넣어주는 것을 권장</p>
+* 모달 창 modal window: 메시지를 보여주는 창
 
-<h4>confirm 대화상자</h4>
-<p>질문, 확인/취소 버튼이 있는 모달 창</p>
-<p>result = confirm(question);</p>
-<p>확인은 true, 취소는 false를 반환</p>
+<br>
+<br>
+
+prompt
+---
+> 텍스트 메시지, 입력 필드, 확인/취소 버튼이 있는 모달 창
+
+```result = prompt(title, [default]);```
+
+* title: 사용자에게 보여줄 문자열
+
+* default: 입력 필드의 초기값 (선택값이지만 없는 경우에도 ''로 기본값 입력 권장)
+
+* 취소, [esc]를 선택한 경우에는 null을 반환
+
+<br>
+<br>
+
+confirm 대화상자
+---
+> 질문, 확인/취소 버튼이 있는 모달 창
+
+```result = confirm(question);```
+
+* 확인은 true, 취소는 false를 반환
+
+<br>
+<br>
+
+형 변환 type conversion
+===
+
+* 자동 변환: 함수, 연산자에 전달되는 값이 적절한 자료형으로 변환되는 경우   
+ex) alert의 문자열로 자동 변환, 수학 관련 연산자가 전달받은 값 숫자 변환
+
+* 명시적 변환: 전달받은 값을 의도를 갖고 원하는 타입으로 변환하는 경우
+
+<br>
+
+1.문자형 변환
+---
+> 문자형의 값이 필요할 때
+
+<br>
+
+#### alert 메서드의 매개변수
+
+무조건 문자형을 받기 때문에 다른 형의 값을 받을 경우 문자열로 자동 변환
+
+```let value = true```   
+```alert(typeof value);``` //boolean 출력
+
+<br>
+
+#### String(value) 함수 호출
+
+전달받은 값을 문자열로 변환
+
+```value = String(value);``` //true
+```alert(typeof value);``` //string 출력
+
+
+     변환 시 false -> "false", null -> "null" 같은 형식으로 변환됨
+
+<br>
+<br>
+
+2.숫자형으로 변환
+---
+> 수학과 관련된 함수와 표현식을 사용할 때
+
+<br>
+
+#### 숫자형이 아닌 나누기 [/] 를 적용한 경우
+
+숫자형으로 자동 변환된 후 연산 수행
+
+```alert( "6" / "2" );``` //3 출력
+
+<br>
+
+#### Number(value) 함수를 사용한 경우
+
+* 해당 함수를 사용하면 value 값을 숫자형으로 명시해 변환함
+
+    ```let str = "123";```   
+    ```let num = Number(str);```   //"123"이 123으로 변환
+    ```alert(typeof num);``` //number 출력
+
+<br>
+
+* 이때, value 값에 숫자 외의 글자가 들어가 있는 경우에는 NaN 출력
+
+    ```let age = Number("임의의 문자열 123");``` //형 변환 실패    
+    ```alert(age);``` //NaN 출력
+
+<br>
+
+#### 숫자형 변환 규칙
+
+* undefined -> NaN
+
+* null -> 0
+
+* true and false -> 1 and 0
+
+* string ->   
+
+    1. 문자열 처음과 끝 공백 제거   
+    ```alert( Number("   123   ") );``` //Number("123")
+
+    2. 남아있는 문자열이 있다면 -> 0  
+    ```alert( Number(false) );``` //0 
+
+    3. 남아있는 문자열이 없다면 -> 숫자 읽기   
+    ```alert( Number("123") );``` //123   
+    ```alert( Number(true) );``` //1
+
+    4. 변환에 실패하면 -> NaN   
+    ```alert( Number("123z") );``` //NaN
+
+<br>
+<br>
+
+3.불린형으로 변환
+---
+> 논리 연산을 수행할 때
+
+<br>
+
+* false: 숫자 0, 빈 문자열, null, undefined, NaN과 같이 직관적으로도 “비어있다고” 느껴지는 값
+
+    ```alert( Boolean(0) );``` //숫자 0 -> false   
+    ```alert( Boolean("") );``` //빈 문자열 -> false
+
+* true: 그 외의 값
+
+    ```alert( Boolean(1) );``` //숫자 1 -> true   
+    ```alert( Boolean("hello") );``` //문자열 -> true   
+    ```alert( Boolean("0") );``` //문자열 0 -> true  
+    ```alert( Boolean(" ") );``` //공백있는 문자열 -> true
