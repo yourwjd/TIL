@@ -735,27 +735,72 @@ ex) alert의 문자열로 자동 변환, 수학 관련 연산자가 전달받은
 
 #### ++ 와 -- 연산자의 위치
 > 변수 앞 혹은 뒤에 올 수 있음   
-> 피연산자의 값을 증가, 감소 시켜준다는 점에서 동일함
+
+> 피연산자의 값을 증가, 감소 시켜준다는 점에서 동일함   
+> 반환 값을 사용하지 않으면 동일함
 
 * 후위형 postfix form
     > 증가/ 감소 전의 기존 값 반환 
 
-    counter++   
+        counter++   
     피연산자 뒤에 오는 경우
 
     ```let counter = 1;```   
     ```let a = ++counter;```
 
     ```alert(a);``` // 2 출력
+
 <br>
 
 * 전위형 prefix form
     > 증가/ 감소 후의 새로운 값 반환
 
-    ++counter  
+        ++counter   
     피연산자 앞에 오는 경우
 
     ```let counter = 1;```   
     ```let a = counter++;```
 
     ```alert(a);``` // 1 출력
+
+<br>
+<br>
+
+비트 연산자 bitwise operator
+---
+> 인수를 32비트 정수로 반환하여 이진 연산을 수행   
+> 대부분의 프로그래밍 언어에서 지원
+
+<br>
+
+#### 사용할 일 거의 x, 암호 다룰 때에는 유용
+
+(참고: [비트연산자][bitwise operator])
+
+[bitwise operator]: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators
+
+<br>
+
+#### 연산자 목록
+
+* 비트 AND ```&``` 
+
+* 비트 OR ```|``` 
+
+* 비트 XOR ```^``` 
+
+* 비트 NOT ```~``` 
+
+* 왼쪽 시프트 ```<<``` 
+
+* 오른쪽 시프트 ```>>``` 
+
+* 부호 없는 오른쪽 시프트 ```>>>``` 
+
+<br>
+<br>
+
+쉼표 연산자 comma operator
+---
+> 보기 힘들고 특이한 연산자   
+> 주로 코드를 짧게 쓰려는 의도로 사용
