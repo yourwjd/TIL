@@ -870,3 +870,145 @@ ex) alert의 문자열로 자동 변환, 수학 관련 연산자가 전달받은
 
 ```let result = 5 > 4``` //true   
 ```alert(result);``` //true
+
+<br>
+<br>
+
+문자열 비교
+---
+#### 유니코드 순으로 문자열 비교 (소문자 > 대문자)
+
+1. 문자열 첫 글자 비교
+
+2. 같을 시 다음 글자 비교
+
+3. 비교가 될 때까지 위 과정 반복
+
+4. 문자열이 종료되었음에도 비교가 되지 않는다면 동일하다고 결론   
+이 때 문자열의 길이가 다르면 긴 문자열이 크다고 결론
+
+<br>
+
+```alert('Z' > 'A');``` //true   
+```alert('Glow' > 'Glee');``` //true   
+```alert('Bee' > 'Be');``` //true
+```alert('2' > '12');``` //true
+
+<br>
+<br>
+
+다른 형을 가진 값 간의  비교
+---
+* 자료형이 다를 경우 숫자형으로 변환
+
+```alert('2' > 1)``` //true   
+숫자 2로 변환된 후 비교 진행
+
+```alert('01' == 1)``` //true   
+숫자 1로 변환된 후 비교 진행
+
+<br>
+
+* 불린값의 경우 true는 1, false는 0으로 변환
+
+```alert(true == 1);``` //true   
+true가 1로 변환된 후 비교 진행
+
+```alert(flase == 0);``` //true   
+flase가 0로 변환된 후 비교 진행
+
+<br>
+
+* 동등 비교와 논리 평가를 동시에 하는 경우
+
+```let a = 0;```   
+```alert( Boolean(a) );``` //false   
+숫자형 0은 false를 반환
+
+```let b = "0";```   
+```alert( Boolean(b) );``` //true   
+문자열 "0"은 빈 문자열이 아니기 때문에 true를 반환
+
+```alert(a == b);``` //true   
+위에서는 각 값이 false와 true였지만   
+동등 비교 == 시 에는 문자열 "0"을 숫자형 0으로 변환하기 때문에 0 == 0 true가 됨
+
+<br>
+<br>
+
+일치 연산자
+---
+> 형 변환없이 값을 비교   
+> 자료형의 동등 여부까지 검사
+
+    ===
+
+#### 동등 연산자와의 차이
+
+* 동등 연산자   
+```alert( 0 == false );``` //true
+
+* 일치 연산자   
+```alert( 0 === false );``` //false   
+자료형이 다르기 때문에 false
+
+<br>
+
+#### 불일치 연산자 !== 도 존재
+
+<br>
+<br>
+
+null / undefined 의 비교
+---
+
+* 일치 연산자 === 를 사용하여 비교   
+
+```alert( null === undefined );``` //false   
+자료형이 다르기 때문에 false
+
+<br>
+
+* 동등 연산자 == 를 사용하여 비교   
+
+```alert( null == undefined );``` //false   
+동등 연산자의 특별한 규칙   
+다른 값과 비교할 때는 무조건 false를 반환
+
+<br>
+
+* 산술 연산자 / 기타 비교 연산자 <, >, <=, >= 를 사용하여 비교   
+
+null, undefined 가 숫자형으로 변환
+
+null = 0   
+undefined = NaN
+
+<br>
+<br>
+
+* #### null vs 0
+
+```alert( null > 0 );```  //false   
+숫자형 0 으로 변환하는 기타 비교 연산자
+
+```alert( null == 0 );``` //false   
+피연산자가 undefined나 null일 때 형 변환을 하지 않음
+
+```alert( null >= 0 );``` //true   
+숫자형 0 으로 변환하는 기타 비교 연산자
+
+#### 따라서 연산자의 차이로 1번째, 3번째와 2번째 값이 논리에 맞지 않게 나오는 것
+
+<br>
+
+* #### 비교가 불가능한 undefined
+
+```alert( undefined > 0 );``` //false   
+NaN 으로 변환하는 기타 비교 연산자
+
+```alert( undefined < 0 );``` //false   
+NaN 으로 변환하는 기타 비교 연산자
+
+```alert( undefined == 0 );``` //false   
+피연산자가 undefined나 null일 때 형 변환을 하지 않음
