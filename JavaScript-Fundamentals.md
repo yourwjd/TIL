@@ -1012,3 +1012,13 @@ NaN 으로 변환하는 기타 비교 연산자
 
 ```alert( undefined == 0 );``` //false   
 피연산자가 undefined나 null일 때 형 변환을 하지 않음
+
+
+<br>
+<br>
+
+if와 '?'를 사용한 조건 처리
+===
+
+'if'문
+---
