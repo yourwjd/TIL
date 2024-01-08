@@ -1098,3 +1098,97 @@ if와 '?'를 사용한 조건 처리
 ```} else {```   
   ```alert( '정답입니다!' );```   
 ```}```
+
+<br>
+<br>
+
+조건부 연산자 ‘?’
+---
+> 조건에 따라 다른 값을 변수에 할당할 때 더 짧고 간결하게 변형할 수 있는 연산자   
+> 피연산자를 3개나 받는 자바스크립트의 유일한 연산자
+
+    ?
+
+    평가 대상 condition이 truthly면 value1, 아니면 value2 반환
+    let result = condition ? value1 : value2;
+
+
+<br>
+
+* 기존 구문
+
+```let accessAllowed;```   
+```let age = prompt('나이를 입력해 주세요.', '');```
+
+```if (age > 18) {```   
+  ```accessAllowed = true;```   
+```} else {```   
+  ```accessAllowed = false;```   
+```}``` 
+
+```alert(accessAllowed);```
+
+<br>
+
+* 조건부 연산자를 사용한 구문
+
+```let accessAllowed;```   
+```let age = prompt('나이를 입력해 주세요.', '');```
+
+```let accessAllowed = (age > 18) ? true : false;```
+
+<br>
+<br>
+
+다중 ‘?’
+---
+> ? 연산자를 여러 개 연결하여 복수의 조건 처리
+
+<br>
+
+* 기존 구문 
+
+```let age = prompt('나이를 입력해주세요.', 18);```
+
+```if (age < 3) {```   
+  ```message = '아기야 안녕?';```   
+```} else if (age < 18) {```   
+  ```message = '안녕!';```   
+```} else if (age < 100) {```   
+  ```message = '환영합니다!';```   
+```} else {```   
+  ```message = '나이가 아주 많으시거나, 나이가 아닌 값을 입력 하셨군요!';```   
+```}```
+
+```alert( message );```
+
+<br>
+
+* 조건부 연산자를 사용한 구문
+
+#### falsy일 때 반환 값을 다음 조건으로 작성
+
+```let age = prompt('나이를 입력해주세요.', 18);```
+
+```let message = (age < 3) ? '아기야 안녕?' :```   
+  ```(age < 18) ? '안녕!' :```   
+  ```(age < 100) ? '환영합니다!' : '나이가 아주 많으시거나, 나이가 아닌 값을 입력 하셨군요!';```
+
+```alert( message );```
+
+<br>
+<br>
+
+부적절한 ‘?’
+---
+> if 대용으로 사용하면 X   
+> 조건에 따라 다른 값을 변수에 할당하지 않고 그저 짧게 쓰려하는 경우
+
+<br>
+
+* 변수에 할당하지 않은 예시
+
+```let company = prompt('자바스크립트는 어떤 회사가 만들었을까요?', '');```
+
+```(company == 'Netscape') ?```   
+   ```alert('정답입니다!') : alert('오답입니다!');```
