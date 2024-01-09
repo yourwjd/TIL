@@ -1192,3 +1192,57 @@ if와 '?'를 사용한 조건 처리
 
 ```(company == 'Netscape') ?```   
    ```alert('정답입니다!') : alert('오답입니다!');```
+
+   
+<br>
+<br>
+
+논리 연산자
+===
+> || (OR), && (AND), ! (NOT)   
+> 피연산자로 모든 타입의 값을 받을 수 있고 결과 역시 모든 타입이 될 수 있음
+
+<br>
+
+|| (OR)
+---
+> 불린값을 조작하는 데 쓰임   
+> 인수 중 하나라도 true이면 true, 그렇지 않으면 false
+
+#### 피연산자가 모두 false인 경우를 제외하고 항상 true
+
+```alert( true || true );```   // true   
+```alert( false || true );```  // true   
+```alert( true || false );```  // true   
+```alert( false || false );``` // false
+
+<br>
+
+#### 피연산자가 불린형이 아니면 평가를 위해 불린형으로 반환
+숫자 1은 true, 숫지 0은 false
+
+```if (1 || 0) {``` // if( true || false )   
+  ```alert( 'truthy!' );```   
+```}```
+
+<br>
+
+#### if문에서 자주 사용
+주어진 조건 중 하나라도 참인지 테스트하는 용도
+
+```let hour = 9;```
+
+```if (hour < 10 || hour > 18) {```   
+  ```alert( '영업시간이 아닙니다.' );```   
+```}```
+
+<br>
+
+#### 여러가지 조건을 넣을 수 있음
+
+```let hour = 12;```   
+```let isWeekend = true;```
+
+```if (hour < 10 || hour > 18 || isWeekend) {```   
+  ```alert( '영업시간이 아닙니다.' );``` // 주말이기 때문임   
+```}```
