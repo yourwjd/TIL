@@ -1246,3 +1246,58 @@ if와 '?'를 사용한 조건 처리
 ```if (hour < 10 || hour > 18 || isWeekend) {```   
   ```alert( '영업시간이 아닙니다.' );``` // 주말이기 때문임   
 ```}```
+
+<br>
+
+첫 번째 truthy를 찾는 OR 연산자 ‘||’
+---
+> 자바스크립트에서만 제공하는 OR의 추가 기능
+
+<br>
+
+#### OR 연산자와 피연산자가 여러 개인 경우
+
+```result = value1 || value2 || value3;```
+
+1. 왼쪽부터 오른쪽으로 피연산자 평가
+2. 각 피연산자 불린형으로 변환, 그 값이 true이면 연산을 멈추고 변환 전 원래 값을 반환
+3. 모든 피연산자의 평가가 끝났는데 모두 false이면 마지막 피연산자 반환
+
+<br>
+
+```alert( 1 || 0 );``` // 1 (1은 truthy임)
+
+```alert( null || 1 );``` // 1 (1은 truthy임)   
+```alert( null || 0 || 1 );``` // 1 (1은 truthy임)
+
+```alert( undefined || null || 0 );``` // 0 (모두 falsy이므로, 마지막 값을 반환)
+
+<br>
+
+* 변수 또는 표현식으로 구성된 목록에서 첫 번째 truthy 얻기
+
+| | 을 사용하여 값이 있는 변수를 찾고 모두 값이 없으면 "익명"을 반환하기
+
+```let firstName = "";```   
+```let lastName = "";```   
+```let nickName = "바이올렛";```
+
+```alert( firstName || lastName || nickName || "익명");``` // 바이올렛
+
+<br>
+
+* 단락 평가
+> 순차적으로 평가하다 truthy를 만나면 그 즉시 평가를 종료하는 것 
+
+#### 두 번째 피연산자가 변수 할당 등 부수적인 효과를 가질 때 명확히 확인할 수 있음
+
+```true || alert("not printed");```   
+true에서 평가를 종료하기 때문에 alert 실행 x
+
+```false || alert("printed");```   
+앞이 false이기 때문에 alert 실행 후 평가 종료
+
+<br>
+
+&& (AND)
+---
