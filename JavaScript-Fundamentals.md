@@ -1209,6 +1209,8 @@ if와 '?'를 사용한 조건 처리
 > 불린값을 조작하는 데 쓰임   
 > 인수 중 하나라도 true이면 true, 그렇지 않으면 false
 
+    result = a || b;
+
 #### 피연산자가 모두 false인 경우를 제외하고 항상 true
 
 ```alert( true || true );```   // true   
@@ -1219,7 +1221,7 @@ if와 '?'를 사용한 조건 처리
 <br>
 
 #### 피연산자가 불린형이 아니면 평가를 위해 불린형으로 반환
-숫자 1은 true, 숫지 0은 false
+숫자 1은 true, 숫자 0은 false
 
 ```if (1 || 0) {``` // if( true || false )   
   ```alert( 'truthy!' );```   
@@ -1298,6 +1300,34 @@ true에서 평가를 종료하기 때문에 alert 실행 x
 앞이 false이기 때문에 alert 실행 후 평가 종료
 
 <br>
+<br>
 
 && (AND)
 ---
+> 두 피연산자가 모두 참일 때 true를 반환, 그렇지 않으면 false
+
+    result = a && b;
+
+```alert( true && true );```   // true   
+```alert( false && true );```  // false   
+```alert( true && false );```  // false   
+```alert( false && false );``` // false
+
+<br>
+
+#### if문과 AND 연산자를 함께 활용
+
+```let hour = 12;```   
+```let minute = 30;```   
+
+```if (hour == 12 && minute == 30) {```   
+  ```alert( '현재 시각은 12시 30분입니다.' );```   
+```}```
+
+<br>
+
+#### 타입 제약 없이 피연산자가 불린형이 아니면 평가를 위해 불린형으로 반환
+
+if (1 && 0) { // 숫자형 피연산자가 논리형 true && false 변환
+  alert( "if 문 안에 falsy가 들어가 있으므로 alert창은 실행되지 않습니다." );
+}
