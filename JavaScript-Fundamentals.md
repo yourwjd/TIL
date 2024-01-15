@@ -1438,3 +1438,22 @@ nullish 병합 연산자 '??'
 
 * a 가 null / undefined 가 아닌 경우 a 반환   
 * 그 외의 경우에는 b 반환
+
+<br>
+
+#### 같은 동작을 하는 두 코드
+
+```x = a ?? b```
+
+```x = (a !== null && a !== undefined) ? a : b;```
+
+<br>
+
+#### 변수에 값을 입력한 변수 찾아내기
+
+```let firstName = null;```   
+```let lastName = null;```   
+```let nickName = "바이올렛";```
+
+// null이나 undefined가 아닌 첫 번째 피연산자   
+```alert(firstName ?? lastName ?? nickName ?? "익명의 사용자");``` // 바이올렛
