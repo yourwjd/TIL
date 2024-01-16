@@ -1457,3 +1457,9 @@ nullish 병합 연산자 '??'
 
 // null이나 undefined가 아닌 첫 번째 피연산자   
 ```alert(firstName ?? lastName ?? nickName ?? "익명의 사용자");``` // 바이올렛
+
+<br>
+<br>
+
+'??'와 '||'의 차이
+---
