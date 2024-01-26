@@ -1571,3 +1571,64 @@ while과 for 반복문
   ```alert( i );```   
   ```i++;```   
 ```} while (i < 3);```
+
+<br>
+
+'for' 반복문
+---
+> <b>while</b> 반복문보다는 복잡하지만 더 많이 쓰이는 반복문
+
+    for (begin; condition; step) {
+      // 반복문 본문
+    }
+
+<br>
+
+* begin
+  > 반복문 진입 시 한 번만 실행
+  
+  i = 0
+
+<br>
+
+* condition
+  > 반복할 때 마다 확인하는 조건, false면 반복문 멈춤
+  
+  i < 3
+
+<br>
+
+* body
+  > condition이 truthy일 동안 계속 실행
+  
+  alert(i)
+
+<br>
+
+* step
+  > 각 반복의 body가 실행된 이후에 실행
+  
+  i++
+
+<br>
+
+  ```for (let i = 0; i < 3; i++) {``` // 0, 1, 2가 출력됩니다.   
+    ```alert(i);```   
+  ```}```
+
+<br>
+
+#### 일반적인 반복문 알고리즘
+
+1. begin 실행
+
+2. condition 확인 (false면 멈춤)
+
+3. truthy면 body 실행, step 실행
+
+4. 다시 condition 확인
+
+5. ...
+
+<br>
+
